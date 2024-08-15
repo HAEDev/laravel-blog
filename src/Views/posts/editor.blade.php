@@ -15,8 +15,10 @@
 
     </div> <!-- End .row -->
 
-    @if(config("laravel-blog.init_editor", true))
-        {!! LaravelBlog::initCKEditor() !!}
-    @endif
+    @push('head')
+        <link rel="stylesheet" href="{{ asset("vendor/lnch/laravel-blog/js/jodit/jodit.min.css") }}" />
+        <script src="{{ asset("vendor/lnch/laravel-blog/js/jodit/jodit.min.js") }}"></script>
+        <script src="{{ asset("vendor/lnch/laravel-blog/js/init-jodit-editor.js") }}"></script>
+    @endpush
 
 @endsection
